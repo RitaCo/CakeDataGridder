@@ -1,7 +1,7 @@
 <?php
 foreach ($actions as $action) {
 	if ($action['options']['type'] == 'link') {
-		echo $this->Html->link($action['name'], $action['url'], array_merge($action['options'], array('title' => $action['name'])));
+		echo $this->Html->link($action['name'], $action['url'], array_merge($action['options'], array('title' => $action['name'],'escapeTitle' => false)));
 	}
 	elseif ($action['options']['type'] == 'image' && !empty($action['options']['image'])) {
 		echo $this->Html->link(

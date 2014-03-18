@@ -1,4 +1,5 @@
-<tr>
+
+<tr class="table-header">
 	<?php
 	foreach ($headers as $header) {
 		?>

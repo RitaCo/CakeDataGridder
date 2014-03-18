@@ -82,7 +82,7 @@ class DataGridHelper extends AppHelper {
 			)
 		),
 		'grid' => array(						//Default grid settings
-			'class' => 'data_grid',				//Class for datagrid
+			'class' => 'wid-dataGrid',				//Class for datagrid
 			'element' => null					//Custom element to render, instead of default
 		),
 		'row' => array(
@@ -282,7 +282,7 @@ class DataGridHelper extends AppHelper {
 						break;
 					}
 				}
-
+				
 				if (isset($column['options']['header']['class'])) {
 					$column['options']['header']['class'] .= ' ' . $directionClass;
 				} else {
@@ -865,5 +865,17 @@ class DataGridHelper extends AppHelper {
 		), $options);
 
 		return $this->Html->script($this->__pluginName . '.jquery.cookie', $options) . $this->Html->script($this->__pluginName . '.DataGrid', $options);
+	}
+	
+	
+	
+/**
+ * DataGridHelper::beforeLayout()
+ * 
+ * @param mixed $layoutFile
+ * @return void
+ */
+	public function beforeLayout($layoutFile){
+		$this->Html->css('DataGridder.rita-grid.css',array('inline'=>false));		
 	}
 }

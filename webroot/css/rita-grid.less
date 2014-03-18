@@ -1,0 +1,325 @@
+/**
+ * 
+ */
+
+
+/**
+	Horizontal gradient, from left to right
+	Creates two color stops, start and end, by specifying a color and position for each color stop.
+	 Color stops are not available in IE9 and below. 
+ 
+ */
+.bg-h(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+    background-image: -webkit-linear-gradient(left, color-stop(@start-color @start-percent), color-stop(@end-color @end-percent)); // Safari 5.1-6, Chrome 10+
+    background-image:  linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+
+/**
+	Vertical gradient, from top to bottom
+	
+	Creates two color stops, start and end, by specifying a color and position for each color stop.
+	Color stops are not available in IE9 and below.
+ */
+.bg-v(@start-color: #555; @end-color: #333; @start-percent: 0%; @end-percent: 100%) {
+	background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+	background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+	background-repeat: repeat-x;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+
+/**
+ * directional
+ */
+.bg-d(@start-color: #555; @end-color: #333; @deg: 45deg) {
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+	background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+}
+
+/**
+ * horizontal-three-colors
+ */
+.bg-h3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+	background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+	background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+	background-repeat: no-repeat;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+/**
+ * vertical-three-colors
+ */
+.bg-v3c(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+	background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+	background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+	background-repeat: no-repeat;
+	filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+
+/**
+ * radial
+ */
+.bg-r(@inner-color: #555; @outer-color: #333) {
+	background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+	background-image: radial-gradient(circle, @inner-color, @outer-color);
+	background-repeat: no-repeat;
+}
+/**
+ * striped
+ */
+.bg-s(@color: rgba(255,255,255,.15); @angle: 45deg) {
+	background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+	background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+}
+
+.wid-3d(){
+	
+	box-shadow: 0 1px 0 #ffffff inset,0 -1px 0 #ffffff inset, 1px 0 0 #ffffff inset, -1px 0 0 #ffffff inset;
+}
+
+
+/**
+ * 
+ */
+ 
+ 
+ 
+ 
+.padding-none .wid-dataGrid{
+	border: none;
+	border-top: 1px solid #bbb;	
+	//border-bottom: 1px solid #bbb;	
+}
+
+
+.wid-dataGrid{
+    border:1px solid #bbb;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.wid-dataGrid > table{
+  	border-collapse: separate;
+    table-layout: fixed;
+    overflow: hidden;
+    position: relative;
+    border-spacing: 0px 0px;
+    width: auto;
+    min-width: 100%;
+	    
+}   
+
+.wid-dataGrid > table  .table-header{
+	box-shadow: 0 -4px 10px 0px #333333;
+}
+
+
+
+.wid-dataGrid .table-header th , 
+.wid-dataGrid .table-row td,
+.wid-dataGrid .table-footer td{
+    padding: 5px 10px;
+    border-right:1px solid #CCCCCC;
+    border-left:1px solid #fff;
+    vertical-align: middle;
+    font-size: 12px;
+    
+    
+ }
+
+
+
+ 
+.wid-dataGrid .table-header  th:last-child,
+.wid-dataGrid .table-row  td:last-child,
+.wid-dataGrid .table-footer td:last-child{
+    border-left: none !important;
+} 
+
+.wid-dataGrid .table-header    th:first-child,
+.wid-dataGrid .table-row  td:first-child,
+.wid-dataGrid .table-footer td:first-child{
+    border-right: none !important;
+} 
+
+.wid-dataGrid .table-row td {
+    border-bottom: 1px dotted #ccc;
+}
+
+.wid-dataGrid .table-row:last-child td {
+    border-bottom: none;
+}
+
+
+.wid-dataGrid > table  .table-header th{
+     border-bottom:1px solid #aaa;
+
+   	.bg-v3c(#DEDEDE, #EDEDED,50%,#DEDEDE); 
+ 
+    background-color: #DCDCDC;
+    padding: 5px 10px;
+   	font-family: 'WTitr';
+	font-size: 16px;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+ 
+ .wid-dataGrid table tbody  tr:nth-child(odd){
+ background: #fafafa;	
+ } 
+ .wid-dataGrid table tbody  tr:hover{
+         background: #FCFBF4;
+         color: #000;
+ }
+
+
+
+
+
+
+.wid-dataGrid .table-header th  a{
+	background: url('/DataGridder/img/sort.png') no-repeat center right;
+	padding: 0 20px;
+}
+.wid-dataGrid .table-header  a.asc{
+	background: url('/DataGridder/img/sort-asc.png') no-repeat center right;
+}
+.wid-dataGrid .table-header  th  a.desc{
+	background: url('/DataGridder/img/sort-desc.png') no-repeat center right;
+}
+ .wid-dataGrid table tbody  tr.cg_row td{
+         padding: 8px 5px;
+         border-bottom: 1px solid #ccc;
+ }
+
+ 
+ .wid-dataGrid table thead  tr th div{
+ 	height: 22px;
+ 	line-height: 22px;
+	padding-right: 30px;
+	min-width: 100px;
+ }
+ 
+ .wid-dataGrid table thead  tr th div{
+ 	 	height: 22px;
+ 	line-height: 22px;
+ }
+ 
+.wid-dataGrid table thead  tr th span{
+	cursor: e-resize;
+	width: 2px;
+	height: 22px;
+	float: right;
+
+  }
+ 
+ .wid-dataGrid table thead  tr.tableHeader th span.RTL{
+ 	float: left;
+ } 
+  
+.wid-dataGrid table thead  tr th  div.Sorter{
+	cursor: pointer;
+	float: left;
+	height: 16px;
+	width: 16px;
+	margin: 2px 5px ;
+    border:1px solid transparent;
+  } 
+.wid-dataGrid table thead  tr th  div.Sorter:hover{
+    border:1px solid #fff;
+    outline: 1px solid #ddd;
+}  
+ .wid-dataGrid table thead  tr th div.RTL{
+	float: right;
+	margin: 2px 5px 0px 0px;
+ } 
+   
+
+
+ 
+
+.wid-dataGrid .table-footer{
+	box-shadow: 0 5px 10px 0 #333333;
+	    .bg-v(#FFFFFF, #DCDCDC);
+}
+
+.wid-dataGrid .table-footer tr{
+ 	
+    font-weight:bold;
+    
+    position: relative;
+
+ }
+
+ .wid-dataGrid table tfoot tr td{
+	border-top: 1px solid #bbbbbb;
+ 	
+    line-height: 30px;
+    padding: 0px 10px;
+    border-right:1px solid #CCCCCC;
+    border-left:1px solid #fff; 
+ }
+
+ .wid-dataGrid > .Footer > div:first-child{
+ 	border-right: none;
+ }
+
+ .wid-dataGrid > .Footer > div:last-child{
+ 	border-left: none;
+ }
+ 
+.wid-dataGrid  > .Footer  .numbers{
+    display: block;
+    
+} 
+
+
+.wid-dataGrid div.Footer .numbers  span{
+    padding: 5px 7px;
+    display: inline-block;
+     //background: -moz-linear-gradient(center top , #EFEFEF, #CACACA) repeat scroll 0 0 transparent;
+     background: url('/Core/img/patterns/bg.png');
+     border : 1px solid #BBBBBB;
+    -webkit-box-shadow:  0 0 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;   
+       
+    margin: 2px 3px;
+    border: 1px solid #666;
+
+}
+ 
+.wid-dataGrid div.Footer .numbers  span >a {
+    color: #fff;
+}
+
+.wid-dataGrid div.Footer .numbers  span.current{
+    color: #222;
+      text-shadow: 0px 1px 2px #fff;
+     background: -moz-linear-gradient(center top , #FFD68F, #FFA200) repeat scroll 0 0 transparent;
+     
+    
+}
+
+ 
+
+
+.wid-dataGrid .cg_row .button{
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    font-size: 10px;
+    font-weight: normal;
+    
+}
+
+
+
+

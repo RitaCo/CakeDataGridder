@@ -23,7 +23,7 @@
 		} else {
 			?>
 			<tbody>
-				<tr>
+				<tr class="table-row">
 					<td colspan="<?php echo $amountOfColumns; ?>">
 						<?php echo $noResultsMessage;?>
 					</td>
@@ -34,8 +34,8 @@
 
 		if (!empty($pagination) || !empty($limit)) {
 			?>
-			<tfoot>
-				<tr>
+			<tfoot >
+				<tr class="table-footer">
 					<?php
 					if(isset($pagination)) {?>
 						<td class="pagination" colspan="<?php echo isset($limit) ? $amountOfColumns - 1 : $amountOfColumns; ?>">
