@@ -16,13 +16,13 @@
 
 		if (!empty($rows)) {
 			?>
-			<tbody>
+			<tbody class="table-body">
 				<?php echo $rows;?>
 			</tbody>
 			<?php
 		} else {
 			?>
-			<tbody>
+			<tbody class="table-body">
 				<tr class="table-row">
 					<td colspan="<?php echo $amountOfColumns; ?>">
 						<?php echo $noResultsMessage;?>
