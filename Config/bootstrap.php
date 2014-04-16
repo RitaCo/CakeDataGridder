@@ -4,9 +4,10 @@
 
 RitaEvent::on('Controller.beforeInit',function(CakeEvent $event){
 	
-   		
-	//	$event->subject()->components[] = 'DataGridder.DataGrid';
-	//$event->subject()->helpers[] = 'DataGridder.DataGrid';
+   	// chage defualt Paginator with datagrid Paginator 	
+	$event->subject()->components['Paginator'] = array('className' => 'DataGridder.DataGrid');
+	$event->subject()->helpers['Paginator'] = array('className' => 'DataGridder.DataGridPaginator');
+	$event->subject()->helpers[] = 'DataGridder.DataGrid';
 		 
      
 });
