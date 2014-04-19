@@ -89,8 +89,9 @@
  
 .padding-none .wid-dataGrid{
 	border: none;
-	border-top: 1px solid #fff;	
-	border-bottom: 1px solid #fff;	
+	border-top: 1px solid #fff !important;	
+border-bottom: 1px solid #fff !important;
+	margin: 0px 1px;
 		
 }
 
@@ -125,7 +126,9 @@
     border-right:1px solid #CCCCCC;
     border-left:1px solid #fff;
     vertical-align: middle;
-    font-size: 13px;
+    text-shadow: 1px 1px 1px #ccc;
+    color: #111;
+    font-size: 14px;
  }
  
 .wid-dataGrid .table-header  th:last-child,
@@ -151,14 +154,17 @@
 
 .wid-dataGrid   .table-header th{
      border-bottom:1px solid #aaa;
- 	background: linear-gradient(to bottom, #ececec 0%, #ccc 100%);
+ 	background: linear-gradient(to bottom, #fff  0%, #ddd  100%);
+ 	cursor: pointer;
     padding: 5px 10px;
    	font-family: 'WTitr';
 	font-size: 16px;
 	text-shadow: 1px 1px 1px #fff;
 	    
 }
-
+.wid-dataGrid   .table-header th:hover{
+		background: linear-gradient(to bottom, #f1f1f1   0%, #ddd  100%);	
+}
 .wid-dataGrid .table-header th  a{
 	background: url('/DataGridder/img/sort.png') no-repeat center right;
 	padding: 0 20px;
@@ -195,7 +201,8 @@
  .wid-dataGrid .table-body  tr:nth-child(odd){
  background: #fafafa;	
  } 
- .wid-dataGrid .table-body  tr:hover{
+ .wid-dataGrid .table-body  tr:hover,
+ .wid-dataGrid .table-body  tr:focus{
          background: #FCFBF4;
          color: #000;
  }
@@ -208,7 +215,8 @@
  */
 .wid-dataGrid .table-footer{
 	box-shadow: 0 5px 10px 0 #333333;
-	background: #F0F0F0;	
+	background: #F0F0F0;
+	background: linear-gradient(to bottom, #fff  0%, #ddd  100%);
 }
 
 .wid-dataGrid .table-footer td{
