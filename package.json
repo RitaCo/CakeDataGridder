@@ -14,20 +14,11 @@
     "bugs": {
         "url": ""
     },
-    "licenses" : [
-        {
-            "type" : "MIT"
-        }
-    ],
-    "devDependencies": {        
+    "licenses" : "MIT",
+    "devDependencies": {
     },
     "require": {
         "php": ">=5.3.0",
-        "cakephp": "2.5.*",
-        "rita": "*"
-    },
-    "extra": {
-        "event": [],
-        "block": []
+        "rita": "7.0.0"
     }
 }
