@@ -24,7 +24,7 @@
 			?>
 			<tbody class="table-body">
 				<tr class="table-row">
-					<td colspan="<?php echo $amountOfColumns; ?>">
+					<td colspan="<?php echo $amountOfColumns; ?>" style="text-align: center; font-weight: 700; color:red ;font-size: 15px;">
 						<?php echo $noResultsMessage;?>
 					</td>
 				</tr>

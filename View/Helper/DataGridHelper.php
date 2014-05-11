@@ -135,7 +135,7 @@ class DataGridHelper extends AppHelper {
 	public function __construct(View $View, $settings = array()) {
 		parent::__construct($View, $settings);
 
-		$this->__defaults['noResultsMessage'] = __('No results');
+		$this->__defaults['noResultsMessage'] = __('هیچ رکوردی یافت نشد.');
 		$this->__defaults['pagination']['prev']['title'] = __('<< Previous');
 		$this->__defaults['pagination']['next']['title'] = __('Next >>');
 
