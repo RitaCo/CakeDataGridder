@@ -462,7 +462,7 @@ class DataGridHelper extends AppHelper {
 				$label = $value;
 
 				if (is_array($label)) {
-					$label = Router::url($value);
+					$label = RitaRouter::url($value);
 				}
 				return $this->Html->link($label, $value);
 			case 'string':
