@@ -1,4 +1,4 @@
-<div <?php echo $options;?>>
+<div <?php echo $options;?> >
 	<?php
 	if (!empty($filter)) {
 		echo $filter;

@@ -1,5 +1,5 @@
 
-<tr class="table-header">
+<tr class="table-header" data-ajax data-ajax-push="false">
 	<?php
 	foreach ($headers as $header) {
 		?>

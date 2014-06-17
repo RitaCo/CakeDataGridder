@@ -59,8 +59,8 @@ class DataGridHelper extends AppHelper {
  * @var array
  */
 	private $__defaults = array(
-		'ajax' => true,							//Do we use AJAX for pagination, sorting and switching
-		'update' => '#content',					//Conainer to update when we do an AJAX request
+		'ajax' => false,							//Do we use AJAX for pagination, sorting and switching
+		'update' => '#ContentContainer',					//Conainer to update when we do an AJAX request
 		'column' => array(						//Default settings for columns
 			'sort'				=> false,		//Sorting on or off
 			'sortKey'			=> null,		//Key for Paginator::sort, defaults to value_path
@@ -757,7 +757,7 @@ class DataGridHelper extends AppHelper {
 		$options['data-ajax'] = $this->__defaults['ajax'];
 
 		//Load DataGrid javascript
-		$this->script();
+	//	$this->script();
 
 		$element = isset($options['grid']['element']) ? $options['grid']['element']: $this->__pluginName . '.' . $this->__elementsDir . DS . 'grid';
 
